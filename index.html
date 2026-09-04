@@ -1,364 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yogeswaran N. | MBA Portfolio</title>
+<title>Yogeswaran N. | MBA Portfolio</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #f4efe2;
-            color: #1d1b18;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        .page {
-            min-height: 100vh;
-            display: grid;
-            grid-template-columns: 34% 66%;
-        }
+body {
+    font-family: "Times New Roman", Georgia, serif;
+    background: #f4efe2;
+    color: #1d1b18;
+}
 
-        /* LEFT PHOTO */
+/* MAIN HERO */
 
-        .photo-section {
-            min-height: 100vh;
-            overflow: hidden;
-            background: #ddd8ca;
-        }
+.hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 35% 65%;
+}
 
-        .photo-section img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            display: block;
-        }
+/* PHOTO */
 
-        /* RIGHT CONTENT */
+.photo-area {
+    position: relative;
+    overflow: hidden;
+    background: #ddd8cc;
+}
 
-        .content {
-            min-height: 100vh;
-            padding: 9vh 8%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+.photo-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
 
-        .eyebrow {
-            font-size: 15px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            color: #9d201c;
-            margin-bottom: 80px;
-        }
+.year {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 16px;
+    color: white;
+    letter-spacing: 2px;
+}
 
-        .eyebrow::before {
-            content: "";
-            display: inline-block;
-            width: 38px;
-            height: 2px;
-            background: #9d201c;
-            margin-right: 14px;
-            vertical-align: middle;
-        }
+/* RIGHT SIDE */
 
-        h1 {
-            font-size: clamp(48px, 5vw, 76px);
-            line-height: 1;
-            letter-spacing: 1px;
-            margin-bottom: 35px;
-        }
+.content {
+    padding: 70px 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .subtitle {
-            font-size: clamp(22px, 2vw, 29px);
-            color: #514d46;
-            margin-bottom: 65px;
-        }
+.label {
+    color: #98231f;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 70px;
+}
 
-        /* BUTTONS */
+.label::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 2px;
+    background: #98231f;
+    margin-right: 15px;
+    vertical-align: middle;
+}
 
-        .buttons {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-            max-width: 680px;
-        }
+h1 {
+    font-size: 64px;
+    line-height: 1;
+    margin-bottom: 35px;
+}
 
-        .button {
-            text-decoration: none;
-            color: #1d1b18;
-            border: 1px solid #302d28;
-            padding: 20px 22px;
-            font-size: 20px;
-            font-weight: bold;
-            background: transparent;
+.subtitle {
+    font-size: 27px;
+    color: #514c45;
+    margin-bottom: 80px;
+}
 
-            transition:
-                transform 0.22s ease,
-                box-shadow 0.22s ease,
-                background-color 0.22s ease,
-                color 0.22s ease;
-        }
+/* BUTTON GRID */
 
-        /* THE BUMP EFFECT YOU ASKED FOR */
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+    max-width: 680px;
+}
 
-        .button:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 18px rgba(0, 0, 0, 0.16);
-            background: #1d1b18;
-            color: #f4efe2;
-        }
+.button {
+    border: 1px solid #302d29;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #1d1b18;
+    background: transparent;
 
-        .resume {
-            background: #1d1b18;
-            color: #f4efe2;
-        }
+    /* HOVER EFFECT */
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+}
 
-        .contact {
-            background: #a5221e;
-            color: white;
-            border-color: #a5221e;
-        }
+.button:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 18px rgba(0,0,0,0.15);
+    background: #ffffff;
+}
 
-        .contact:hover {
-            background: #851b18;
-            color: white;
-        }
+.button.dark {
+    background: #1d1b18;
+    color: white;
+}
 
-        /* HIDDEN SECTIONS */
+.button.dark:hover {
+    background: #302d29;
+}
 
-        .section {
-            display: none;
-            min-height: 100vh;
-            padding: 80px 9%;
-            background: #f4efe2;
-        }
+.button.red {
+    background: #a32320;
+    color: white;
+    border-color: #a32320;
+}
 
-        .section:target {
-            display: block;
-        }
+.button.red:hover {
+    background: #8c1e1b;
+}
 
-        .section h2 {
-            font-size: 50px;
-            margin-bottom: 35px;
-        }
+/* SECTIONS */
 
-        .section p {
-            max-width: 850px;
-            font-size: 20px;
-            line-height: 1.8;
-            color: #4d4942;
-        }
+section {
+    padding: 90px 10%;
+    min-height: 60vh;
+}
 
-        .back {
-            display: inline-block;
-            margin-top: 50px;
-            text-decoration: none;
-            color: #a5221e;
-            font-weight: bold;
-            font-size: 18px;
-        }
+section h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+}
 
-        /* MOBILE */
+section p {
+    font-size: 20px;
+    line-height: 1.7;
+    max-width: 900px;
+}
 
-        @media (max-width: 800px) {
+/* PROJECT CARDS */
 
-            .page {
-                grid-template-columns: 1fr;
-            }
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
 
-            .photo-section {
-                min-height: 55vh;
-            }
+.project {
+    border: 1px solid #aaa294;
+    padding: 25px;
+    background: #f8f4e9;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
-            .content {
-                min-height: auto;
-                padding: 60px 8%;
-            }
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
 
-            .eyebrow {
-                margin-bottom: 45px;
-            }
+.project h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
 
-            h1 {
-                font-size: 48px;
-            }
+.project p {
+    font-size: 17px;
+}
 
-            .subtitle {
-                margin-bottom: 45px;
-            }
+/* DOCUMENT BUTTON */
 
-            .buttons {
-                grid-template-columns: 1fr;
-            }
+.document {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 25px;
+    background: #1d1b18;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: transform 0.25s ease;
+}
 
-            .section {
-                padding: 60px 8%;
-            }
+.document:hover {
+    transform: translateY(-5px);
+}
 
-            .section h2 {
-                font-size: 40px;
-            }
-        }
+/* CONTACT */
 
-    </style>
+.contact {
+    background: #1d1b18;
+    color: white;
+}
+
+.contact p {
+    color: #ddd;
+}
+
+.contact a {
+    color: white;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-area {
+        height: 500px;
+    }
+
+    .content {
+        padding: 60px 8%;
+    }
+
+    .label {
+        margin-bottom: 45px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .subtitle {
+        font-size: 23px;
+        margin-bottom: 50px;
+    }
+
+    .buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- HOME PAGE -->
+<!-- HOME -->
 
-    <main class="page">
+<div class="hero">
 
-        <!-- YOUR PHOTO -->
-        <div class="photo-section">
-            <img src="images/profile.jpg" alt="Yogeswaran N.">
+    <div class="photo-area">
+
+        <img src="profile.jpeg" alt="Yogeswaran N.">
+
+        <div class="year">2026</div>
+
+    </div>
+
+    <div class="content">
+
+        <div class="label">
+            PORTFOLIO / MBA CANDIDATE
         </div>
 
-        <!-- INTRODUCTION -->
+        <h1>
+            YOGESWARAN N.
+        </h1>
 
-        <div class="content">
+        <div class="subtitle">
+            MBA (Finance &amp; Marketing)
+        </div>
 
-            <div class="eyebrow">
-                PORTFOLIO / MBA CANDIDATE
-            </div>
+        <div class="buttons">
 
-            <h1>
-                YOGESWARAN N.
-            </h1>
+            <a href="#about" class="button">
+                About me
+            </a>
 
-            <div class="subtitle">
-                MBA (Finance &amp; Marketing)
-            </div>
+            <a href="#resume" class="button dark">
+                Resume
+            </a>
 
-            <div class="buttons">
+            <a href="#certifications" class="button">
+                Certifications
+            </a>
 
-                <a href="#about" class="button">
-                    About me
-                </a>
+            <a href="#projects" class="button">
+                Projects
+            </a>
 
-                <a href="#resume" class="button resume">
-                    Resume
-                </a>
-
-                <a href="#certifications" class="button">
-                    Certifications
-                </a>
-
-                <a href="#projects" class="button">
-                    Projects
-                </a>
-
-                <a href="#contact" class="button contact">
-                    Contact me
-                </a>
-
-            </div>
+            <a href="#contact" class="button red">
+                Contact me
+            </a>
 
         </div>
 
-    </main>
+    </div>
+
+</div>
 
 
-    <!-- ABOUT ME -->
+<!-- ABOUT -->
 
-    <section id="about" class="section">
+<section id="about">
 
-        <h2>About me</h2>
+    <h2>About Me</h2>
 
-        <p>
-            Welcome to my personal portfolio.
+    <p>
+        I am an MBA candidate specializing in Finance and Marketing,
+        interested in business development, marketing, sales and financial
+        analysis. I am continuously developing my professional skills
+        through academic projects, certifications and practical learning.
+    </p>
 
-            I am Yogeswaran N., an MBA student specializing in
-            Finance and Marketing. This website showcases my
-            academic projects, certifications, skills and
-            professional journey.
-        </p>
-
-        <a href="#" class="back">← Back to Home</a>
-
-    </section>
+</section>
 
 
-    <!-- RESUME -->
+<!-- RESUME -->
 
-    <section id="resume" class="section">
+<section id="resume">
 
-        <h2>Resume</h2>
+    <h2>Resume</h2>
 
-        <p>
-            My latest resume and professional profile will be
-            available here.
-        </p>
+    <p>
+        You can view or download my latest resume here.
+    </p>
 
-        <br>
+    <!-- Upload resume.pdf to GitHub later -->
 
-        <a href="documents/resume.pdf"
-           target="_blank"
-           class="button">
-            View Resume
+    <a href="resume.pdf" target="_blank" class="document">
+        View Resume
+    </a>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+
+<section id="certifications">
+
+    <h2>Certifications</h2>
+
+    <p>
+        My professional certifications and additional learning
+        achievements will be added here.
+    </p>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+        <div class="project">
+
+            <h3>
+                Retailer Expectation & Market Perception
+            </h3>
+
+            <p>
+                A study on retailer expectations and market perception
+                towards stainless steel cookware.
+            </p>
+
+        </div>
+
+
+        <div class="project">
+
+            <h3>
+                Consumer Preference Study
+            </h3>
+
+            <p>
+                A study on consumer preference and buying behaviour
+                towards Aavin products in Madurai.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+    <h2>Contact Me</h2>
+
+    <p>
+        Email:
+        <a href="mailto:yourmail@gmail.com">
+            yourmail@gmail.com
         </a>
+    </p>
 
-        <br>
+    <p>
+        LinkedIn:
+        <a href="#" target="_blank">
+            My LinkedIn Profile
+        </a>
+    </p>
 
-        <a href="#" class="back">← Back to Home</a>
+</section>
 
-    </section>
-
-
-    <!-- CERTIFICATIONS -->
-
-    <section id="certifications" class="section">
-
-        <h2>Certifications</h2>
-
-        <p>
-            My certifications, courses and professional
-            achievements will be displayed here.
-        </p>
-
-        <a href="#" class="back">← Back to Home</a>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="projects" class="section">
-
-        <h2>Projects</h2>
-
-        <p>
-            My academic and professional projects will be
-            showcased here, including research projects,
-            presentations and reports.
-        </p>
-
-        <a href="#" class="back">← Back to Home</a>
-
-    </section>
-
-
-    <!-- CONTACT -->
-
-    <section id="contact" class="section">
-
-        <h2>Contact me</h2>
-
-        <p>
-            Email: your-email@example.com
-        </p>
-
-        <a href="#" class="back">← Back to Home</a>
-
-    </section>
 
 </body>
 </html>
